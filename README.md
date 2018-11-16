@@ -1,5 +1,3 @@
-<img src="https://www.holbertonschool.com/assets/holberton-logo-1cc451260ca3cd297def53f2250a9794810667c7ca7b5fa5879a569a457bf16f.png" alt="Holberton logo">
-
 # 0x18. C - Stacks, Queues - LIFO, FIFO
 ---
 ## Name
@@ -77,10 +75,10 @@ $
 pall This is the end of our program. Monty is awesome!$
 ```
 ## Examples
-__push__ pushes an element to the stack.
-Usage: `push <int>`
-__pall__ prints all the values on the stack, starting from the top of the stack.
-Usage: `pall`
+__push__ pushes an element to the stack.  
+Usage: `push <int>`  
+__pall__ prints all the values on the stack, starting from the top of the stack.  
+Usage: `pall`  
 ```
 jinji@ubuntu:~/monty$ cat -e bytecodes/00.m
 push 1$
@@ -91,6 +89,41 @@ jinji@ubuntu:~/monty$ ./monty bytecodes/00.m
 3
 2
 1
+```
+__pint__ prints the value at the top of the stack, followed by a new line.  
+Usage: `pint`
+```
+jinji@ubuntu:~/monty$ cat bytecodes/06.m 
+push 1
+pint
+push 2
+pint
+push 3
+pint
+jinji@ubuntu:~/monty$ ./monty bytecodes/06.m 
+1
+2
+3
+```
+__pop__ removes the top element of the stack.  
+Usage: `pop`
+__swap__ swaps the top two elements of the stack.  
+Usage: `swap` 
+```
+julien@ubuntu:~/0x18-stacks_queues_lifo_fifo$ cat bytecodes/09.m 
+push 1
+push 2
+push 3
+pall
+pop
+swap
+pall
+julien@ubuntu:~/0x18-stacks_queues_lifo_fifo$ ./monty bytecodes/09.m 
+3
+2
+1
+1
+2
 ```
 
 ## Files
