@@ -2,7 +2,7 @@
 ---
 ## Name
 
-Monty Translator
+Monty ByteCode Interpreter
 
 ## Description
 
@@ -106,7 +106,7 @@ jinji@ubuntu:~/monty$ ./monty bytecodes/06.m
 3
 ```
 __pop__ removes the top element of the stack.  
-Usage: `pop`
+Usage: `pop`  
 __swap__ swaps the top two elements of the stack.  
 Usage: `swap` 
 ```
