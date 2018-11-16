@@ -37,7 +37,63 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
  * You are expected to do the tasks in the order shown in the project
  * The repository monty should be added as a submodule to your holbertonschool-low_level_programming repository, under the name 0x18-stacks_queues_lifo_fifo
 
+## To Install
+* Run the command `git clone https://github.com/iamzinzi/monty.git` in your terminal
+* Compile from the home directory of the project (`monty`) with the command `gcc -Wall -Werror -Wextra -pedantic *.c -o monty`
 
+## Using monty
+Usage: `./monty file`
+#### Monty byte code files
+Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
+```
+jinji@ubuntu:~/monty$ cat -e bytecodes/000.m
+push 0$
+push 1$
+push 2$
+  push 3$
+                   pall    $
+push 4$
+    push 5    $
+      push    6        $
+pall$
+```
+Monty byte code files can contain blank lines (empty or made of spaces only). Any additional text after the opcode or its required argument is not taken into account:
+```
+jinji@ubuntu:~/monty$ cat -e bytecodes/001.m
+push 0 Push 0 onto the stack$
+push 1 Push 1 onto the stack$
+$
+push 2$
+  push 3$
+                   pall    $
+$
+$
+                           $
+push 4$
+$
+    push 5    $
+      push    6        $
+$
+pall This is the end of our program. Monty is awesome!$
+```
+## Examples
+__push__ pushes an element to the stack.
+Usage: `push <int>`
+__pall__ prints all the values on the stack, starting from the top of the stack.
+Usage: `pall`
+```
+jinji@ubuntu:~/monty$ cat -e bytecodes/00.m
+push 1$
+push 2$
+push 3$
+pall$
+jinji@ubuntu:~/monty$ ./monty bytecodes/00.m
+3
+2
+1
+```
+
+## Files
 ---
 File|Task
 ---|---
@@ -60,14 +116,8 @@ swap.c | a function that swaps the top two elements of the stack
 tokenize_functions.c | a program that handles arguments passed to the program monty
 
 
-#### Compilation
-
-Files are compiled this way:
-
-$ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
-
 ### Authors
 
-[Jinji](https://github.com/iamzinzi)
+[Jinji Zhang](https://github.com/iamzinzi)
 
 [Leine Valente](https://github.com/leinefran)
